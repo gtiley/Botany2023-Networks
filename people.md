@@ -10,10 +10,10 @@ Below is the list of workshop instructors.
 
 | Name                 |Institution                    | Contact        | Topic                                                          |
 |----------------------|-------------------------------|----------------|----------------------------------------------------------------|
-| Lauren Frankel       |University of Wisconsin-Madison| TBD            | Models of trait evolution                                      |
+| Lauren Frankel       |University of Wisconsin-Madison| [website](https://laurenfrankel.wordpress.com/)            | Models of trait evolution                                      |
 | Mark Kessler         |Rice University                | TBD            | PhyloNetPy                                                     |
 | Kevin Kong           |University of Wisconsin-Madison| TBD            | Site pattern frequencies                                       |
-| Kevin Liu            |Michigan State University      | TBD            | Split networks and scalability                                 |
-| Claudia Solís-Lemus  |University of Wisconsin-Madison| TBD            | Estimating networks from gene trees                            |
+| Kevin Liu            |Michigan State University      | [website](https://www.cse.msu.edu/~kjl/)            | Split networks and scalability                                 |
+| Claudia Solís-Lemus  |University of Wisconsin-Madison| [website](https://solislemuslab.github.io/)            | Estimating networks from gene trees                            |
 | George Tiley         |Royal Botanic Gardens Kew      | g.tiley@kew.org| Hypothesis testing with full-likelihood methods                |
 |----------------------|-------------------------------|----------------|----------------------------------------------------------------|
