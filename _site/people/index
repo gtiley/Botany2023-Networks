@@ -3,20 +3,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>About | Botany 2023 Workshop on Phylogenetic Networks</title>
+<title>People | Botany 2023 Workshop on Phylogenetic Networks</title>
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="About" />
+<meta property="og:title" content="People" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Methodological advances in reticulate evolution" />
 <meta property="og:description" content="Methodological advances in reticulate evolution" />
-<link rel="canonical" href="http://localhost:4000/Botany2023-Networks/about/" />
-<meta property="og:url" content="http://localhost:4000/Botany2023-Networks/about/" />
+<link rel="canonical" href="http://localhost:4000/Botany2023-Networks/people/" />
+<meta property="og:url" content="http://localhost:4000/Botany2023-Networks/people/" />
 <meta property="og:site_name" content="Botany 2023 Workshop on Phylogenetic Networks" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="About" />
+<meta property="twitter:title" content="People" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"Methodological advances in reticulate evolution","headline":"About","name":"Botany 2023 Workshop on Phylogenetic Networks","url":"http://localhost:4000/Botany2023-Networks/about/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Methodological advances in reticulate evolution","headline":"People","url":"http://localhost:4000/Botany2023-Networks/people/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/Botany2023-Networks/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/Botany2023-Networks/feed.xml" title="Botany 2023 Workshop on Phylogenetic Networks" /></head>
 <body><header class="site-header" role="banner">
@@ -39,36 +39,24 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title">People</h1>
   </header>
 
   <div class="post-content">
-    <p>We are focused on the practical knowledge and skill building to perform phylogenetic network analyses and interpret networks. This includes strategies for working with data sets of various sizes and ages, and understanding the limitations of existing methods.
-Each session will provide some background material and theory as necessary with emphasis on using software for real-time analyses.
-Breaks are built into the day and participants are encouraged to discuss their research with instructors over the course of the workshop and conference.<br /></p>
+    Registration is currently open and can be completed through the [Botany 2023 Registration Site](https://www.xcdsystem.com/botany/store/index.cfm?ID=dlMRPlH). Registration is limited to 50 participants.
 
-<h3 id="learning-goals">Learning Goals</h3>
-<ul>
-  <li>Understand how molecular sequence data can be used to estimate phylogenetic networks</li>
-  <li>Understand the appropriateness of different models for different biological problems</li>
-  <li>Develop strategies for estimating species networks with many loci</li>
-  <li>Evaluate confidence in phylogenetic network estimates</li>
-  <li>Develop strategies for communicating and visualizing phylogenetic networks</li>
-  <li>Compare trait evolution on networks versus binary trees</li>
-</ul>
+Below is the list of workshop instructors.
 
-<h3 id="learning-outcomes">Learning Outcomes</h3>
-<ul>
-  <li>Estimate phylogenetic networks from gene tree topologies with <a href="https://crsl4.github.io/PhyloNetworks.jl/latest/">PhyloNetworks</a></li>
-  <li>Estimate large implicit split networks with <a href="https://protect-eu.mimecast.com/s/b5g0C6BjWtV13P6umGhmT">FastNet</a></li>
-  <li>Detect gene flow from site patterns with <a href="https://github.com/sungsik-kong/PhyNEST.jl">PhyNEST</a></li>
-  <li>Test gene flow hypotheses with <a href="https://github.com/bpp/bpp">BPP</a></li>
-  <li>Construct complex models for various data types with <a href="https://phylogenomics.rice.edu/html/phynetpy.html">PhyNetPy</a></li>
-  <li>Test trait evolution hypotheses with morphological models in <a href="https://crsl4.github.io/PhyloNetworks.jl/latest/">PhyloNetworks</a></li>
-</ul>
-
-<h3 id="preparing-for-the-workshop">Preparing for the Workshop</h3>
-<p>Information on installation steps that are needed to be performed prior to the workshop are on the <a href="/Botany2023-Networks/pre-workshop">Pre-workshop page</a>.</p>
+| Name                 |Institution                    | Contact        | Topic                                                          |
+|----------------------|-------------------------------|----------------|----------------------------------------------------------------|
+| Lauren Frankel       |University of Wisconsin-Madison| [website](https://laurenfrankel.wordpress.com/)            | Models of trait evolution                                      |
+| Mark Kessler         |Rice University                | mak17@rice.edu            | PhyNetPy                                                     |
+| Kevin Kong           |University of Wisconsin-Madison| TBD            | Site pattern frequencies                                       |
+| Kevin Liu            |Michigan State University      | [website](https://www.cse.msu.edu/~kjl/)            | Split networks and scalability                                 |
+| Huw Ogilvie          |Rice University                | [website](https://www.cs.rice.edu/~ogilvie/)           | PhyNetPy               |
+| Claudia Solís-Lemus  |University of Wisconsin-Madison| [website](https://solislemuslab.github.io/)            | Estimating networks from gene trees                            |
+| George Tiley         |Royal Botanic Gardens Kew      | g.tiley@kew.org [website](https://gtiley.github.io/)| Hypothesis testing with full-likelihood methods                |
+|----------------------|-------------------------------|----------------|----------------------------------------------------------------|
 
   </div>
 

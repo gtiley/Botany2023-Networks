@@ -33,7 +33,7 @@ header_pages:
    - about.md
    - people.md
    - schedule.md
-   - reading.md
+   - pre-workshop.md
    - conduct.md
 
 # Build settings

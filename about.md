@@ -18,11 +18,11 @@ Breaks are built into the day and participants are encouraged to discuss their r
 
 ### Learning Outcomes
 * Estimate phylogenetic networks from gene tree topologies with [PhyloNetworks](https://crsl4.github.io/PhyloNetworks.jl/latest/)
-* Estimate large implicit split networks with FastNet
+* Estimate large implicit split networks with [FastNet](https://protect-eu.mimecast.com/s/b5g0C6BjWtV13P6umGhmT)
 * Detect gene flow from site patterns with [PhyNEST](https://github.com/sungsik-kong/PhyNEST.jl)
 * Test gene flow hypotheses with [BPP](https://github.com/bpp/bpp)
-* Construct complex models for various data types with PhyloNetPy
+* Construct complex models for various data types with [PhyNetPy](https://phylogenomics.rice.edu/html/phynetpy.html)
 * Test trait evolution hypotheses with morphological models in [PhyloNetworks](https://crsl4.github.io/PhyloNetworks.jl/latest/)
 
-### In Preparation for the Workshop
-Information on installation steps that are needed to be performed prior to the workshop as well as optional readings will be updated on the [Pre-workshop page]({{site.baseurl}}/reading) in the coming weeks.
+### Preparing for the Workshop
+Information on installation steps that are needed to be performed prior to the workshop are on the [Pre-workshop page]({{site.baseurl}}/pre-workshop).
