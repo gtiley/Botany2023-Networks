@@ -18,7 +18,7 @@ Breaks are built into the day and participants are encouraged to discuss their r
 
 ### Learning Outcomes
 * Estimate phylogenetic networks from gene tree topologies with [PhyloNetworks](https://crsl4.github.io/PhyloNetworks.jl/latest/)
-* Estimate large implicit split networks with [FastNet](https://protect-eu.mimecast.com/s/b5g0C6BjWtV13P6umGhmT)
+* Evaluate phylogenetic support statistics with [RAWR](https://gitlab.msu.edu/liulab/botany-2023-phylogenetic-networks-workshop)
 * Detect gene flow from site patterns with [PhyNEST](https://github.com/sungsik-kong/PhyNEST.jl)
 * Test gene flow hypotheses with [BPP](https://github.com/bpp/bpp)
 * Construct complex models for various data types with [PhyNetPy](https://phylogenomics.rice.edu/html/phynetpy.html)
