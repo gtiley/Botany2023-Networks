@@ -13,7 +13,7 @@ Below is the list of workshop instructors.
 | Lauren Frankel       |University of Wisconsin-Madison| [website](https://laurenfrankel.wordpress.com/)            | Models of trait evolution                                      |
 | Mark Kessler         |Rice University                | mak17@rice.edu            | PhyNetPy                                                     |
 | Kevin Kong           |University of Wisconsin-Madison| [website]( https://sungsik-kong.github.io/)            | Site pattern frequencies                                       |
-| Kevin Liu            |Michigan State University      | [website](https://www.cse.msu.edu/~kjl/)            | Split networks and scalability                                 |
+| Kevin Liu            |Michigan State University      | [website](https://www.cse.msu.edu/~kjl/)            | Phylogenetic support estimation                                 |
 | Huw Ogilvie          |Rice University                | [website](https://www.cs.rice.edu/~ogilvie/)           | PhyNetPy               |
 | Claudia Solís-Lemus  |University of Wisconsin-Madison| [website](https://solislemuslab.github.io/)            | Estimating networks from gene trees                            |
 | George Tiley         |Royal Botanic Gardens Kew      | [website](https://gtiley.github.io/)| Hypothesis testing with full-likelihood methods                |

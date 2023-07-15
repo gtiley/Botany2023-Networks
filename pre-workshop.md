@@ -47,7 +47,7 @@ If you do not already, please install the following:
 and close julia with `exit()`.
 
 
-## Split Networks in FastNet
+## Estimating Phylogenetic Support using RAWR
 
 You need to download [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 

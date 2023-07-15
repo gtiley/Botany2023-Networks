@@ -10,7 +10,7 @@ We meet on 23 July at 8:00 and the room is TBD. Participants must bring their ow
 |-----------|---------------------------------------------------|--------------------------------------------------------------------|
 |8:00-8:40  | Introductory Material and Background              | [website]({{site.baseurl}}/activities/Introduction/)                                                                  |
 |8:45-9:45  | Networks from Gene Trees in PhyloNetworks         | [website](https://github.com/crsl4/PhyloNetworks.jl/wiki)                                                                 |
-|9:50-10:50 | Split Networks in FastNet                         | [website](https://gitlab.msu.edu/liulab/botany-2023-phylogenetic-networks-workshop)                                                                 |
+|9:50-10:50 | Estimating Phylogenetic Support using RAWR        | [website](https://gitlab.msu.edu/liulab/botany-2023-phylogenetic-networks-workshop)                                                                 |
 |10:55-11:55| Detecting Gene Flow from Site Patterns in PhyNEST | [website](https://github.com/sungsik-kong/PhyNEST.jl)                                                                 |
 |12:00-13:00| Lunch Break                                       |                                                                    |
 |13:00-14:00| Hypothesis Testing in BPP                         | [website]({{site.baseurl}}/activities/BPP/)                                                                 |
