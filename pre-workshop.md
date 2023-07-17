@@ -6,7 +6,7 @@ permalink: /pre-workshop/
 
 Prior to the workshop, participants are expected to install the software below. Prior experience using command line programs and something like R can be helpful but is not necessary for participation. Material will be delivered at an introductory level and attempt to get everyone up and running with a range of tools.
 
-Instructors will hold an office hour on July 22nd from 16:00 to 17:00 (location TBD or via Zoom) to help troubleshoot any problems in advance.
+Instructors will hold an office hour on July 22nd from 17:00 to 18:00 (in person at the Boise Center) to help troubleshoot any problems in advance.
 
 
 ## Some common prerequisites

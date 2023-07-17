@@ -47,12 +47,37 @@
 
 <h2 id="what-is-a-good-model">What is a Good Model?</h2>
 
-<h2 id="bayes-factors-and-model-probabilities">Bayes Factors and Model Probabilities</h2>
+<h3 id="in-defense-of-the-biologist">In defense of the biologist</h3>
 
-<h2 id="approximation-with-the-savage-dickey-density-ratio">Approximation with the Savage-Dickey Density Ratio</h2>
+<p>Full-likelihood method provide us a powerful tool because we can evaluate multiple competing hypotheses in a statistically sound probabilistic framework. However, it can be tempting to compare as many competing models as possible. In practice, this will be difficult due to computational burdens or our inability to explain the rational for every <em>possible</em> model. A successful application of BPP or similar full-likelihood programs relies on your knowledge of the system and their natural history, and perhaps prior analyses with a range of phylogenetic or population genetic tools.</p>
+
+<h3 id="how-to-specify-a-network">How to specify a network</h3>
+
+<p>Formatting networks correctly can be difficult, especially when we want to specify the direction of gene flow. Luckily, BPP comes with a simple program to help create network models based on simpler binary trees. Consider our backbone topology - we will add some node labels for our convenience too. We can create a simple text file <code class="language-plaintext highlighter-rouge">msci-create.in</code> that provides the backbone topology as well as the branche that gene flow goes from and the branch that gene flow goes into. Multiple gene flow events can be specified here and the branch lengths of the introgression edges can be constrained if appropriate:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree ((Pmun,Pspe)s,((Dexp,Dint)u,(Dgol,(Dcel,Dlud)w)v)t)r;
+hybridization v Dgol, w Dcel as i j tau=yes, yes phi=0.5
+</code></pre></div></div>
+<p>Here, we have allowed the branch lengths of the two introgression edges to vary and specify an initial <em>introgression probability</em> of 0.5. The <em>introgression probability</em> will be sampled by the MCMC algorithm, so this is only a starting value. We can generate the network used for our analyses with the following command:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~/programs/bpp-4.6.1-macos-x86_64/bin/bpp --msci-create msci-create.in &gt; msci-create.out
+</code></pre></div></div>
+<p>Below is the resulting network that we can add to our control file. You should try to draw the network yourself from the text string and convince yourself this is correct.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>((Pmun,Pspe)s, ((Dexp,Dint)u,((j[&amp;phi=0.500000,tau-parent=yes],Dgol)i,((Dcel)j[&amp;phi=0.500000,tau-parent=yes],Dlud)w)v)t)r;
+</code></pre></div></div>
+
+<h2 id="marginal-likelihoods-and-model-probabilities">Marginal likelihoods and model probabilities</h2>
+<p>Likelihood methods are great because they often allow us to compare and rank models. But a complication of Bayesian methods is that we have a sample of likelihoods rather than a single maximum likelihood estimate. Additionally, Bayesian estimators will be influenced by the prior distributions we imposed. There has been rigorous investigation into methods for estimating the <em>marginal likehood</em> where those confounding effects of the prior are factored out. The stepping-stone method [CITE] has had good performance in a range of other phylogenetic applications and we will use it again here.</p>
+
+<p>Notes on stepping stone</p>
+
+<p>dos Reis package</p>
+
+<p>our results</p>
+
+<h2 id="bayes-factor-approximation-with-the-savage-dickey-density-ratio">Bayes factor approximation with the Savage-Dickey density ratio</h2>
 
 <h2 id="limits-to-biological-interpretations">Limits to Biological Interpretations</h2>
-
+<p>In our <em>Dryopteris</em> test case, we are lucky such that the biology is already worked out over years of meticulous chromosome work combined with multiple molecular studies. Unknown systems do not have this advantage and the lifetime of an investigation may not be long enough for long-term experimental work. It can be tempting to use network methods to infer the process of hybridization or polyploidization, but I strongly caution against this. Processes other than hybrid speciation can explain high introgression probabilities [CITE] and inferring extant parental species can be dubious if there are sampling gaps among species.</p>
 
   </div>
 
