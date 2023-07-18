@@ -28,7 +28,7 @@ If you do not already, please install the following:
 
 - Download [BUCKy](http://pages.stat.wisc.edu/~ane/bucky/index.html)
 - Download [TICR](https://github.com/nstenz/TICR)
-- Download [QuartetMaxCut](http://research.haifa.ac.il/%7Essagi/software/QMCN.tar.gz)
+- Download [QuartetMaxCut](https://github.com/solislemuslab/network-simulation-study/tree/master/level_2/pipeline/get-pop-tree/QMCN)
 - Download [MrBayes](http://nbisweden.github.io/MrBayes/)
 - [Download](https://julialang.org) julia and
   follow instructions to install julia
