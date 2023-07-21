@@ -24,17 +24,22 @@ Formatting networks correctly can be difficult, especially when we want to speci
 tree (Pmun,(Dint,(Dlud,(Dcel,Dgol)u)t)s)r;
 hybridization t Dlud, u Dcel as i j tau=yes, yes phi=0.2
 ```
+
 Here, we have allowed the divergence time of the introgression edges from their parental lineages to be different from the age of introgression. We specify an initial *introgression probability* of 0.2. The *introgression probability* will be sampled by the MCMC algorithm, so this is only a starting value. We can generate the network used for our analyses with the following command:
+
 ```
 bpp --msci-create msci-create.in > msci-create.out
 ````
+
 Below is the resulting network that we can add to our control file. You should try to draw the network yourself from the text string and convince yourself this is correct.
+
 ```
 (Pmun, (Dint,((j[&phi=0.200000,tau-parent=yes],Dlud)i,((Dcel)j[&phi=0.800000,tau-parent=yes],Dgol)u)t)s)r;
 ```
 
 ### The BPP control file
 All aspects of data input, results output, and the model specification are done within the *control file*. An example looks like this:
+
 ```
           seed =  219527
 
@@ -73,6 +78,7 @@ All aspects of data input, results output, and the model specification are done 
       nsample = 10000
       threads = 4 1 1
 ```
+
 All of the options and parameters are explained very well in the [BPP manual](https://github.com/bpp/bpp), but here is a short explanation:
 - **seed** = random number used to generate starting conditions for the MCMC algorithm
 - **seqfile** = input sequences. BPP uses a phylip format with all loci in one file
@@ -103,16 +109,20 @@ All of the options and parameters are explained very well in the [BPP manual](ht
 We can run BPP using our example control file and data. Change into the `BotanyWorkshop` folder and you will find the sequence data `Dryopteris.bppDat` and the individual-to-species map `Dryopteris.spmap`. Have a look to get a feel for the formatting. If you prepare the individual-to-species map file for your own data, the input data for BPP can be prepared by the `formatBPPdata.pl` script from a collection of aligned fasta files in the `Alignments` folder.
 
 Change into `Converge` and then the folder for model 4 `4` and run BPP on one of the prepared control files by:
+
 ```
 cd Convergence
 cd 4
 bpp --cfile 4.1.ctl
 ```
+
 The MCMC analysis will start. It will take a while even for our small dataset. While that is running, we can look at some finished runs and evaluate convergence and look at the results. I have already completed 4 runs for all models with the same MCMC settings. A popular tool for analyzing convergence is [Tracer](https://github.com/beast-dev/tracer). It is a useful tool, but I am a big believer that chasing ESS scores might not be the best for complex introgression models. Instead, we will run an R script to summarize some information for us, and if we are satisfied, we can use BPP to use all of our MCMC samples for parameter estimation.
+
 ```
 cd ../../Convergence-finished/4
 R CMD BATCH plotPosteriors.R
 ```
+
 Alternatively, you can run the R script from Rstudio or the R shell. A quick check of all of the parameter posteriors is that they look pretty similar. I think a good indication of convergence is a comparison of the median node heights (divergence times). If everything went well, our estimates should be very close to a one-to-one relationship.
 
 {:refdef: style="text-align: center;"}
@@ -124,6 +134,7 @@ In my opinion, everything looks good! We could benefit from a larger sample freq
 1. Report the results of the first MCMC analysis, since everything converged
 2. Combine the MCMC sample across runs, if we need to increase our sample size
 You are fine doing either but depending on your reviewer, they might tell you to do the other. If you want to generate the BPP output for the combined sample, we can concatenate the MCMC output from the 4 runs together, but there is only 1 header line. This was done for `combined.mcmc`. Then we need to make a new control file `combined.ctl` with some edits:
+
 ```
           seed =  219527
 
@@ -162,6 +173,7 @@ You are fine doing either but depending on your reviewer, they might tell you to
       nsample = 40000
 *      threads = 4 1 1
 ```
+
 Notice the the mcmcfile is now our combined sample as input. We then change **print** to -1 and this will instruct BPP to bypass the MCMC and summarize the mcmcfile as the new outfile. If you every want to comment out a line in the control file, you can uses a "\*", like I did for the **threads** option.
 
 Can you find the mean age of introgression for our allotetraploid and its 95% highest posterior density (HPD) interval in the output file? How does your new run compare when it is finished? You can add the results of your new run to a [google sheet](https://docs.google.com/spreadsheets/d/1tKoA4iBUqMxCz9Vi8c73tEpAbY18nT9e2hYkROMvhek/edit?usp=sharing).
@@ -186,28 +198,35 @@ Marginal likelihoods are time-intensive, because the require us to generate an M
 To estimate the marginal likelihood we need to generate the series of power posteriors. A reasonable number of steps can be hard to determine, but you can repeat the analysis for an increasing number of steps to check stability of the marginal lnL estimate. I tend to use 24 steps for my work. We will use 8 here to speed up the process.
 
 Some files have been prepared for you. Go ahead and start your first run for your assigned model. For example, if you have model 1, do:
+
 ```
 cd YOUR_PATH/BotanyWorkshop/BF-8-short/1/1
 bpp --cfile 1.1.bf.ctl
 ```
 
 When it is done, complete the other 7 runs. These will go fast because I have made the MCMC very short...too short. But while you wait, there is a question about setting up the analysis. The only difference in these control files versus out previous ones is that the line `BayesFactorBeta = 1e-300` was added to the bottom of `1.1.bf.ctl`. By the 8th run, this says `BayesFactorBeta = 5.129089e-01`. My preference is to let the [bppr R package](https://github.com/dosreislab/bppr) generate these values for my, but BPP also comes with an option called `bfdriver` or you can calculate them yourself. With the `bppr`, I generated the values for the number of points by
+
 ```R
 make.beta(8,method="step-stones",a=5)
 ```
 
 You could then generate the necessary control files and folder structure and a file of the beta values called `beta.txt` with:
+
 ```R
 make.bfctlf(b, ctlf="controlfile.ctl", betaf="beta.txt")
 ```
+
 but because I find myself working on shared university clusters, especially to distribute the jobs over many processors. You will notice a prepared control file that has all of the models included and they are commented out. I use the Perl script `genBFctl.pl` to use the `template.ctl` and `beta.txt` file to generate all of the necessary control files on the cluster. You can use that or `bppr` if more comfortable, but you will need to prepare a control file for each model.
 Once all of the runs are done for the 8 steps. You can calculate the marginal likelihood. In R, go to the directory with the 8 folders for your model. For example model 1:
+
 ```R
 library(bppr)
 setwd("YOUR_PATH/BotanyWorkshop/BF-8-short/1")
 my.model <- stepping.stones(mcmcf="mcmc.txt",betaf="../beta.txt")
 ```
+
 This works because the mcmc output from each run is called mcmc.txt. Have a look at the object created called `my.model`. Can you find the marginal lnL and the standard error? Add those to the [google sheet](https://docs.google.com/spreadsheets/d/1tKoA4iBUqMxCz9Vi8c73tEpAbY18nT9e2hYkROMvhek/edit?usp=sharing). We can do the model probability calculations by hand, but you can use the predone runs in BF-8-completed to generate the model probabilities and their 95% confidence intervals based on a bootstrap from bppr. For example:
+
 ```R
 setwd("YOUR_PATH/BotanyWorkshop/BF-8-completed/1")
 model.1 <- stepping.stones(mcmcf="mcmc.txt",betaf="../beta.txt")
@@ -225,12 +244,13 @@ setwd("../7")
 model.7 <- stepping.stones(mcmcf="mcmc.txt",betaf="../beta.txt")
 bayes.factors(model.1,model.2,model.3,model.4,model.5,model.6,model.7)
 ```
+
 These are from longer MCMC runs. How do the results compare to our short runs? Model 4 is the least worst, but do you feel comfortable rejecting our more complex model 7? You can see results from *more steps* and *more loci* on sheet 3 of the [google sheet](https://docs.google.com/spreadsheets/d/1tKoA4iBUqMxCz9Vi8c73tEpAbY18nT9e2hYkROMvhek/edit?usp=sharing).
 
 ## Bayes factor approximation with the Savage-Dickey density ratio
 Despite the rigor and computation of Bayes factors, there is some concern for preferring unnecessarily more complex models, or perhaps your error yields confidence intervals on the model probabilities that yields the interpretation ambiguous (Tiley et al. 2023[^4]). Another tool is available to us that requires a fraction of the computing - an approximation of the Bayes factor for nested models using the Savage-Dickey density ratio (Ji et al. 2023[^5]). We can approximate the Bayes factor of model 7 versus model 4 because 7 adds only one more introgression edge. In R, we 
 
-```
+```R
 setwd("YOUR_PATH/BotanyWorkshop/Convergence-finished/7")
 model.7.mcmc <- read.table(file="7.1.mcmc",header=TRUE,sep="\t")
 # The epsilon value from Tiley et al. (2023)
@@ -249,6 +269,7 @@ posterior.probability <- nlowphi/length(model.7.mcmc$phi_l..k)
 # The Savage-Dickey Ratio approximation of the Bayes factor for model7/model4
 sd.bayes.factor <- cutoff/posterior.probability
 ```
+
 We can consult the tables of Kass and Raftery (1995)[^6] to interpret our Bayes factor result. Note this is not on any log scale. I calculated **0.04014452**, which means we can reject the 2-rate model, and this happens to be about the 3% significance level. Try repeating the calculation with a smaller cutoff of 0.001 to ensure stability of our results. Thus, the Savage-Dickey ratio approximation can be an good strategy if your models are nested and you can generate good posteriors of the phi values. 
 
 ## Limits to Biological Interpretations
