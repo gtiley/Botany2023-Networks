@@ -1,0 +1,4 @@
+tree (Pmun,(Dint,(Dlud,(Dcel,Dgol)u)t)s)r;
+hybridization t Dlud, u Dcel as i j tau=yes, yes phi=0.2
+hybridization i Dlud, u Dgol as k l tau=no, yes phi=0.2
+

@@ -1,0 +1,10 @@
+bpp v4.6.1_osx_x86_64, 8GB RAM, 4 cores
+https://github.com/bpp/bpp
+
+Auto-selected SIMD ISA: AVX2
+
+Parsing definititions file msci-create-5taxa.tworate.in ...
+Reconstructing species tree ...
+Processing hybridization/introgression events ...
+Newick tree:
+(Pmun, (Dint,((j[&phi=0.200000,tau-parent=yes],(l[&phi=0.200000,tau-parent=no],Dlud)k)i,((Dcel)j[&phi=0.800000,tau-parent=yes],(Dgol)l[&phi=0.800000,tau-parent=yes])u)t)s)r;
