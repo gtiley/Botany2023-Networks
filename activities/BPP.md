@@ -4,6 +4,10 @@ title: Hypothesis Testing with BPP
 permalink: /activities/BPP/
 ---
 
+## Getting Started
+
+Download one of the archives that have the data and pre-configured control files for today's exercises [here](https://www.dropbox.com/scl/fo/ve7gua8fuex73t9lwluvi/h?rlkey=3n0px6iohxm9xx3hxp5tgnp6u&dl=0).
+
 ## Introduction
 There are now a range of tools for detecting historical gene flow between species or populations from genomic data. This might involve searches with network models, tests with site patterns, or other lines of evidence. The goal of this exercise is to understand how full-likelihood methods can be a tool for testing multiple competing hypotheses and divergence time estimation to help us bridge the gap between patterns and processes. There are other full likelihood implementations of multispecies network coalescent or related models, but we will focus on the BPP software.
 
