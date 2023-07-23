@@ -1,7 +1,0 @@
-#NEXUS
-BEGIN TREES;
-	UTREE 1 = (Pmun: 0.089087, (Dint: 0.038548, (Dcel: 0.016175, (Dlud: 0.015365, Dgol: 0.015365)DludDgol[&height_95%_HPD={0.00578200, 0.02416900}, theta=0.0083307]: 0.000809)DcelDludDgol[&height_95%_HPD={0.00596500, 0.02523700}, theta=0.0088815]: 0.022374)DintDcelDludDgol[&height_95%_HPD={0.02508500, 0.05262300}, theta=0.0048114]: 0.050539)PmunDintDcelDludDgol[&height_95%_HPD={0.06447100, 0.11327600}, theta=0.0060887];
-END;
-
-[Species tree with tau as branch lengths and theta as labels, for FigTree.
-In FigTree, choose 95%HPD for Node Bars and label for Node Labels]
