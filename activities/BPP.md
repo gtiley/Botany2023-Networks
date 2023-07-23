@@ -106,12 +106,12 @@ All of the options and parameters are explained very well in the [BPP manual](ht
 
 ## Parameter estimation and convergence
 
-We can run BPP using our example control file and data. Change into the `BotanyWorkshop` folder and you will find the sequence data `Dryopteris.bppDat` and the individual-to-species map `Dryopteris.spmap`. Have a look to get a feel for the formatting. If you prepare the individual-to-species map file for your own data, the input data for BPP can be prepared by the `formatBPPdata.pl` script from a collection of aligned fasta files in the `Alignments` folder.
+We can run BPP using our example control file and data. Change into the `BPP-Workshop` folder and you will find the sequence data `Dryopteris.bppDat` and the individual-to-species map `Dryopteris.spmap`. Have a look to get a feel for the formatting. If you prepare the individual-to-species map file for your own data, the input data for BPP can be prepared by the `formatBPPdata.pl` script from a collection of aligned fasta files in the `exampleData_30loci` folder.
 
 Change into `Converge` and then the folder for model 4 `4` and run BPP on one of the prepared control files by:
 
 ```
-cd Convergence
+cd Converge
 cd 4
 bpp --cfile 4.1.ctl
 ```
@@ -119,7 +119,7 @@ bpp --cfile 4.1.ctl
 The MCMC analysis will start. It will take a while even for our small dataset. While that is running, we can look at some finished runs and evaluate convergence and look at the results. I have already completed 4 runs for all models with the same MCMC settings. A popular tool for analyzing convergence is [Tracer](https://github.com/beast-dev/tracer). It is a useful tool, but I am a big believer that chasing ESS scores might not be the best for complex introgression models. Instead, we will run an R script to summarize some information for us, and if we are satisfied, we can use BPP to use all of our MCMC samples for parameter estimation.
 
 ```
-cd ../../Convergence-finished/4
+cd ../../Converge-completed/4
 R CMD BATCH plotPosteriors.R
 ```
 
@@ -200,7 +200,7 @@ To estimate the marginal likelihood we need to generate the series of power post
 Some files have been prepared for you. Go ahead and start your first run for your assigned model. For example, if you have model 1, do:
 
 ```
-cd YOUR_PATH/BotanyWorkshop/BF-8-short/1/1
+cd YOUR_PATH/BotanyWorkshop/BF-8/1/1
 bpp --cfile 1.1.bf.ctl
 ```
 
@@ -221,7 +221,7 @@ Once all of the runs are done for the 8 steps. You can calculate the marginal li
 
 ```R
 library(bppr)
-setwd("YOUR_PATH/BotanyWorkshop/BF-8-short/1")
+setwd("YOUR_PATH/BPP-Workshop/BF-8/1")
 my.model <- stepping.stones(mcmcf="mcmc.txt",betaf="../beta.txt")
 ```
 
@@ -251,9 +251,9 @@ These are from longer MCMC runs. How do the results compare to our short runs? M
 Despite the rigor and computation of Bayes factors, there is some concern for preferring unnecessarily more complex models, or perhaps your error yields confidence intervals on the model probabilities that yields the interpretation ambiguous (Tiley et al. 2023[^4]). Another tool is available to us that requires a fraction of the computing - an approximation of the Bayes factor for nested models using the Savage-Dickey density ratio (Ji et al. 2023[^5]). We can approximate the Bayes factor of model 7 versus model 4 because 7 adds only one more introgression edge. In R, we 
 
 ```R
-setwd("YOUR_PATH/BotanyWorkshop/Convergence-finished/7")
+setwd("YOUR_PATH/BPP-Workshop/Converge-completed/7")
 model.7.mcmc <- read.table(file="7.1.mcmc",header=TRUE,sep="\t")
-# The epsilon value from Tiley et al. (2023)
+# The epsilon values from Tiley et al. (2023) were 0.01 and 0.001.
 cutoff <- 0.01
 # The number of posterior samples where the introgression probability from D. ludoviciana to D. goldiana is less than cutoff
 nlowphi <- 0
