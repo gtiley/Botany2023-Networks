@@ -8,8 +8,8 @@ We meet on 23 July at 8:00 and the room is TBD. Participants must bring their ow
 
 |Time       |Module                                             |Slides                                                              | 
 |-----------|---------------------------------------------------|--------------------------------------------------------------------|
-|8:00-8:40  | Introductory Material and Background              | [website]({{site.baseurl}}/activities/Introduction/)                                                                  |
-|8:45-9:45  | Networks from Gene Trees in PhyloNetworks         | [website](https://github.com/crsl4/PhyloNetworks.jl/wiki)                                                                 |
+|8:00-8:40  | Introductory Material and Background              | [slides](https://github.com/gtiley/Botany2023-Networks/blob/gh-pages/slides/Botany2023-IntroductionSlides.pdf/) [google sheet](https://docs.google.com/spreadsheets/d/1tKoA4iBUqMxCz9Vi8c73tEpAbY18nT9e2hYkROMvhek/edit?usp=sharing)]|
+|8:45-9:45  | Networks from Gene Trees in PhyloNetworks         | [website](https://github.com/crsl4/PhyloNetworks.jl/wiki)          |
 |9:50-10:50 | Estimating Phylogenetic Support using RAWR        | [website](https://gitlab.msu.edu/liulab/botany-2023-phylogenetic-networks-workshop)                                                                 |
 |10:55-11:55| Detecting Gene Flow from Site Patterns in PhyNEST | [website](https://github.com/sungsik-kong/PhyNEST.jl)                                                                 |
 |12:00-13:00| Lunch Break                                       |                                                                    |
